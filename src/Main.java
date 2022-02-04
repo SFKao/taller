@@ -5,24 +5,28 @@ public class Main {
     private static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
+        while(true) {
+            int opcion;
 
-        int opcion = 0;
+            do {
+                System.out.println("Que ejercicio quieres ver");
+                opcion = Integer.parseInt(in.nextLine());
+            } while (opcion < 0 || opcion >= 7);
 
-        do{
-            System.out.println("Que ejercicio quieres ver");
-            opcion = Integer.parseInt(in.nextLine());
-        }while (opcion <0 || opcion >= 7);
+            switch (opcion) {
+                case 1:
+                    ej1();
+                    break;
+                case 2:
+                    ej2();
+                    break;
+                case 3:
+                    ej3();
+                    break;
 
-        switch (opcion){
-            case 1:
-                ej1();
-                break;
 
-
-
+            }
         }
-
-
     }
 
     public static void ej1(){
@@ -81,5 +85,14 @@ public class Main {
         a.setHerramienta(b);
 
         System.out.println(a);
+    }
+
+    public static void ej3(){
+        Persona3 p = new Persona3("Oscar","77432934F");
+        for(int i = 0; i < 10; i++){
+            p.insert(new Ordenadores(i,String.valueOf(i*i*i)));
+        }
+        System.out.println("Persona = " + p.toStringLoop());
+        System.out.println("Primer ordenador de persona" + p.get(0).toStringLoop());
     }
 }
