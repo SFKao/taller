@@ -28,7 +28,9 @@ public class Main {
                 case 4:
                     ej4();
                     break;
-
+                case 5:
+                    ej5();
+                    break;
 
             }
         }
@@ -109,5 +111,21 @@ public class Main {
         }
         System.out.println("Persona = " + p.toStringLoop());
         //System.out.println("Primer ordenador de persona" + p.get(0).toStringLoop());
+    }
+
+    public static void ej5() {
+        Taller t = new Taller("La mancha", "Motos Santi", 9, 8, "Aqui");
+        t.insert(new Mecanico("Manueh","Manu",8,2,1000));
+        t.insert(new Mecanico("Alejandro","Siiuuu",7,2,1000));
+        t.insert(new Mecanico("El Mal","Cierto", 0,4,1000));
+        t.insert(new Mecanico("Obama","Ni diea",7,4,1000));
+
+        t.setJefe(t.get(2));
+
+        System.out.println(t);
+
+        System.out.println("Sueldo jefe: " + t.getJefe().sueldo());
+        System.out.println("Sueldo 2 años: "+t.get(0).sueldo());
+        System.out.println("Numero de mecanicos: " + Mecanico.getNumeroMecanicos());
     }
 }
