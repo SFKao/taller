@@ -14,6 +14,8 @@ public class Main {
             } while (opcion < 0 || opcion >= 7);
 
             switch (opcion) {
+                case 0:
+                    System.exit(0);
                 case 1:
                     ej1();
                     break;
@@ -22,6 +24,9 @@ public class Main {
                     break;
                 case 3:
                     ej3();
+                    break;
+                case 4:
+                    ej4();
                     break;
 
 
@@ -94,5 +99,15 @@ public class Main {
         }
         System.out.println("Persona = " + p.toStringLoop());
         System.out.println("Primer ordenador de persona" + p.get(0).toStringLoop());
+    }
+
+    public static void ej4(){
+        Persona4 p = new Persona4("Oscar","77432934F");
+        for(int i = 0; i < 10; i++){
+            p.insert(new Ordenador4(i,String.valueOf(i*i*i)));
+            p.arreglar(0);
+        }
+        System.out.println("Persona = " + p.toStringLoop());
+        //System.out.println("Primer ordenador de persona" + p.get(0).toStringLoop());
     }
 }
