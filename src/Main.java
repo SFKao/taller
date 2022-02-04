@@ -6,6 +6,26 @@ public class Main {
 
     public static void main(String[] args) {
 
+        int opcion = 0;
+
+        do{
+            System.out.println("Que ejercicio quieres ver");
+            opcion = Integer.parseInt(in.nextLine());
+        }while (opcion <0 || opcion >= 7);
+
+        switch (opcion){
+            case 1:
+                ej1();
+                break;
+
+
+
+        }
+
+
+    }
+
+    public static void ej1(){
         Persona a,b;
         Coche c,d;
 
@@ -52,5 +72,14 @@ public class Main {
         System.out.println("Coche de a preventa: " + c);
         a.vendeCoche(b);
         System.out.println("Coche de a tras venta: " + c);
+    }
+
+    public static void ej2(){
+        Persona2 a = new Persona2("Oscar", "Melero", 10);
+        Herramienta b = new Herramienta("Motosierra",3);
+
+        a.setHerramienta(b);
+
+        System.out.println(a);
     }
 }
